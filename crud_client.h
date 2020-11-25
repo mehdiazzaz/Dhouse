@@ -4,7 +4,7 @@
 #include <QSqlQuery>
 #include <QString>
 #include <QSqlQueryModel>
-
+//client.h
 class crud_client
 {
     int id;
