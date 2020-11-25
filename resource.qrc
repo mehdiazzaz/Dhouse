@@ -1,0 +1,8 @@
+<RCC>
+    <qresource prefix="/">
+        <file>selem2.jpg</file>
+        <file>dhouse.png</file>
+        <file>client icon.jpg</file>
+        <file>icon promotion.jpg</file>
+    </qresource>
+</RCC>
