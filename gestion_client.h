@@ -51,7 +51,7 @@ private slots:
     void on_pushButton_rechercher_3_clicked();
 
     void on_pushButton_rechercher_4_clicked();
-
+//
 private:
     Ui::gestion_client *ui;
      crud_client tempclient;

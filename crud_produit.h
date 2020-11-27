@@ -29,7 +29,7 @@ public:
     QSqlQueryModel *trierprix();
     QSqlQueryModel *afficher_nom(QString);
 
-
+//
 };
 
 #endif // CRUD_PRODUIT_H

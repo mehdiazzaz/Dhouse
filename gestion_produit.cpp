@@ -191,7 +191,7 @@ void gestion_produit::on_pushButton_8_clicked()
         QString prenom = ui->lineEdit_id_porduit_modifer->text();
        ui->tableView_4->setModel(tempproduit.afficher_nom(prenom));
 }
-
+//
 void gestion_produit::on_pushButton_6_clicked()
 {
     player->setMedia(QUrl::fromLocalFile("C:/Users/Mehdi AZZAZ/Documents/projt_Dhouse/impression promotion.mp3"));

@@ -28,6 +28,7 @@ private:
     //
     MainWindow *m;
     //
+    //
 };
 
 #endif // LOGIN_H

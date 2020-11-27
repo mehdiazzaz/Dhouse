@@ -103,3 +103,4 @@ QSqlQueryModel * crud_produit::afficher_nom(QString prenom)
     model->setHeaderData(4,Qt::Horizontal,"promotion");
     return model ;
 }
+//

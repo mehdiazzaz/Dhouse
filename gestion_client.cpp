@@ -227,7 +227,7 @@ void gestion_client::on_pushButton_rechercher_2_clicked()
         QString prenom = ui->lineEdit_id->text();
        ui->tableView_recherche_2->setModel(tempclient.afficher_nom(prenom));
 }
-
+//
 void gestion_client::on_pushButton_rechercher_3_clicked()
 {
     ui->tableView->setModel(tempclient.afficher());

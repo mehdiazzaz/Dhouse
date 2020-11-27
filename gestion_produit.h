@@ -39,7 +39,7 @@ private slots:
     void on_pushButton_8_clicked();
 
     void on_pushButton_6_clicked();
-
+//
 private:
     Ui::gestion_produit *ui;
     crud_produit tempproduit;

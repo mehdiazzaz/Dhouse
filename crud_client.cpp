@@ -106,4 +106,4 @@ QSqlQueryModel * crud_client::afficher_nom(QString prenom)
     return model ;
 }
 
-
+//

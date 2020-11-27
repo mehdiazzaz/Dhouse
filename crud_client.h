@@ -11,7 +11,7 @@ class crud_client
     QString prenom;
     QString nom;
     int age;
-
+//
 
 public:
     crud_client();

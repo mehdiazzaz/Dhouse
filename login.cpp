@@ -45,7 +45,7 @@ void login::on_pushButton_connect_clicked()
 
                   }
          }
-
+//
          void login::on_pushButton_2_clicked()
          {
 

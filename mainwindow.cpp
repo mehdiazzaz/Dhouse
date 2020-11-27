@@ -93,7 +93,7 @@ void MainWindow::on_pushButton_4_clicked()
        player->play();
        qDebug()<<player->errorString();
 }
-
+//
 void MainWindow::on_pushButton_5_clicked()
 {
     player->stop();
