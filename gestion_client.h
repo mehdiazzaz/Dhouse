@@ -44,6 +44,14 @@ private slots:
 
     void on_pushButton_impression_client_clicked();
 
+    void on_pushButton_ajouter_re_clicked();
+
+    void on_pushButton_rechercher_2_clicked();
+
+    void on_pushButton_rechercher_3_clicked();
+
+    void on_pushButton_rechercher_4_clicked();
+
 private:
     Ui::gestion_client *ui;
      crud_client tempclient;

@@ -104,7 +104,7 @@ background:white;
        <x>440</x>
        <y>140</y>
        <width>241</width>
-       <height>41</height>
+       <height>51</height>
       </rect>
      </property>
      <property name="text">
@@ -117,7 +117,7 @@ background:white;
        <x>440</x>
        <y>240</y>
        <width>241</width>
-       <height>41</height>
+       <height>51</height>
       </rect>
      </property>
      <property name="text">

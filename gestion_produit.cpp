@@ -5,6 +5,9 @@
 #include "crud_produit.h"
 #include <QThread>
 #include <QPixmap>
+#include <QPrinter>
+#include <QPrintDialog>
+#include <QtPrintSupport>
 gestion_produit::gestion_produit(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::gestion_produit)
@@ -166,4 +169,38 @@ void gestion_produit::on_checkBox_3_clicked()
                                     QObject::tr("Erreur !.\n"
                                                 "Click Cancel to exit."), QMessageBox::Cancel);
           }
+}
+
+void gestion_produit::on_pushButton_5_clicked()
+{
+    ui->tableView->setModel(tempproduit.afficher());
+        QString prenom = ui->lineEdit_id_porduit->text();
+       ui->tableView_2->setModel(tempproduit.afficher_nom(prenom));
+}
+
+void gestion_produit::on_pushButton_7_clicked()
+{
+    ui->tableView->setModel(tempproduit.afficher());
+        QString prenom = ui->lineEdit_id_supprimer->text();
+       ui->tableView_3->setModel(tempproduit.afficher_nom(prenom));
+}
+
+void gestion_produit::on_pushButton_8_clicked()
+{
+    ui->tableView->setModel(tempproduit.afficher());
+        QString prenom = ui->lineEdit_id_porduit_modifer->text();
+       ui->tableView_4->setModel(tempproduit.afficher_nom(prenom));
+}
+
+void gestion_produit::on_pushButton_6_clicked()
+{
+    player->setMedia(QUrl::fromLocalFile("C:/Users/Mehdi AZZAZ/Documents/projt_Dhouse/impression promotion.mp3"));
+    player->play();
+    qDebug()<<player->errorString();
+    QThread::sleep(1);
+    QPrinter printer;
+    printer.setPrinterName("diserter printer name");
+    QPrintDialog dialog(&printer,this);
+    if(dialog.exec()==QDialog::Rejected)return;
+    ui->tableView->render(&printer);
 }

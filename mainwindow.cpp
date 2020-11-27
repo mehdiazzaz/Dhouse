@@ -7,6 +7,7 @@
 #include <QMediaPlayer>
 #include <QMediaPlaylist>
 #include <QDebug>
+#include <QVideoWidget>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -35,7 +36,18 @@ void MainWindow::on_pushButton_exit_clicked()
         player->play();
         qDebug()<<player->errorString();
         QThread::sleep(2);
-    close();
+        QVideoWidget * VW =new QVideoWidget ;
+                  player->setVideoOutput(VW);
+                  player->setMedia(QUrl::fromLocalFile("C:/Users/Mehdi AZZAZ/Documents/projt_Dhouse/thank.mpg"));
+                  VW->setGeometry(350,120,700,500);
+                  VW->show();
+                  player->setVolume(10);
+                  player->play();
+                  qDebug() <<player->state();
+                  QThread::sleep(5);
+                  VW->close();
+                  close();
+
 }
 
 void MainWindow::on_pushButton_clicked()

@@ -27,6 +27,7 @@ public:
     QSqlQueryModel *trierid();
     QSqlQueryModel *trierpromotion();
     QSqlQueryModel *trierprix();
+    QSqlQueryModel *afficher_nom(QString);
 
 
 };

@@ -92,4 +92,14 @@ QSqlQueryModel * crud_produit::trierprix()
     model->setHeaderData(4,Qt::Horizontal,"promotion");
     return model ;
 }
-
+QSqlQueryModel * crud_produit::afficher_nom(QString prenom)
+{
+    QSqlQueryModel *model = new QSqlQueryModel();
+    model->setQuery("select * from PORDUITC WHERE id = '"+prenom+"'");
+    model->setHeaderData(0,Qt::Horizontal,"id");
+    model->setHeaderData(1,Qt::Horizontal,"description");
+    model->setHeaderData(2,Qt::Horizontal,"prix");
+    model->setHeaderData(3,Qt::Horizontal,"prix_apres_promotion");
+    model->setHeaderData(4,Qt::Horizontal,"promotion");
+    return model ;
+}

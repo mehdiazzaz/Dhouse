@@ -6,6 +6,7 @@
 #include <QMediaPlayer>
 #include <QVideoWidget>
 #include <QMediaPlaylist>
+#include "login.h"
 
 
 int main(int argc, char *argv[])
@@ -40,9 +41,13 @@ int main(int argc, char *argv[])
     MainWindow w;
     connecter c;
     bool test=c.creatconnect();
-    if(test)
-   { w.show();
+    //w.show();
+    login l;
+        l.show();
+        QObject::connect(&l,&login::sig,&w,&MainWindow::show);
 
+    if(test)
+   {
 
 
         qDebug() <<"connexion etablie";

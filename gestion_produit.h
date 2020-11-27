@@ -32,6 +32,14 @@ private slots:
 
     void on_checkBox_3_clicked();
 
+    void on_pushButton_5_clicked();
+
+    void on_pushButton_7_clicked();
+
+    void on_pushButton_8_clicked();
+
+    void on_pushButton_6_clicked();
+
 private:
     Ui::gestion_produit *ui;
     crud_produit tempproduit;

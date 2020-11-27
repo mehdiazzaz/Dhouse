@@ -198,6 +198,11 @@ void gestion_client::on_checkBox_4_clicked()
 
 void gestion_client::on_pushButton_rechercher_clicked()
 {
+    player->setMedia(QUrl::fromLocalFile("C:/Users/Mehdi AZZAZ/Documents/projt_Dhouse/chercher client.mp3"));
+                player->play();
+                qDebug()<<player->errorString();
+                QThread::sleep(1);
+    ui->tableView->setModel(tempclient.afficher());
     ui->tableView->setModel(tempclient.afficher());
         QString prenom = ui->lineEdit_recherche->text();
        ui->tableView_recherche->setModel(tempclient.afficher_nom(prenom));
@@ -205,9 +210,35 @@ void gestion_client::on_pushButton_rechercher_clicked()
 
 void gestion_client::on_pushButton_impression_client_clicked()
 {
+    player->setMedia(QUrl::fromLocalFile("C:/Users/Mehdi AZZAZ/Documents/projt_Dhouse/impression client.mp3"));
+    player->play();
+    qDebug()<<player->errorString();
+    QThread::sleep(1);
     QPrinter printer;
     printer.setPrinterName("diserter printer name");
     QPrintDialog dialog(&printer,this);
     if(dialog.exec()==QDialog::Rejected)return;
     ui->tableView->render(&printer);
 }
+
+void gestion_client::on_pushButton_rechercher_2_clicked()
+{
+    ui->tableView->setModel(tempclient.afficher());
+        QString prenom = ui->lineEdit_id->text();
+       ui->tableView_recherche_2->setModel(tempclient.afficher_nom(prenom));
+}
+
+void gestion_client::on_pushButton_rechercher_3_clicked()
+{
+    ui->tableView->setModel(tempclient.afficher());
+        QString prenom = ui->lineEdit_id_supprimer->text();
+       ui->tableView_recherche_3->setModel(tempclient.afficher_nom(prenom));
+}
+
+void gestion_client::on_pushButton_rechercher_4_clicked()
+{
+    ui->tableView->setModel(tempclient.afficher());
+        QString prenom = ui->lineEdit_id_modifer->text();
+       ui->tableView_recherche_4->setModel(tempclient.afficher_nom(prenom));
+}
+

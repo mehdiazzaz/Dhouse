@@ -16,9 +16,9 @@ SOURCES += \
     crud_produit.cpp \
     gestion_client.cpp \
     gestion_produit.cpp \
+    login.cpp \
     main.cpp \
-    mainwindow.cpp \
-    printer.cpp
+    mainwindow.cpp
 
 HEADERS += \
     connexion.h \
@@ -26,12 +26,13 @@ HEADERS += \
     crud_produit.h \
     gestion_client.h \
     gestion_produit.h \
-    mainwindow.h \
-    printer.h
+    login.h \
+    mainwindow.h
 
 FORMS += \
     gestion_client.ui \
     gestion_produit.ui \
+    login.ui \
     mainwindow.ui
 
 # Default rules for deployment.
