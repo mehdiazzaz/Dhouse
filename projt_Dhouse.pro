@@ -1,9 +1,7 @@
 QT       += core gui sql gui multimedia multimediawidgets printsupport
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets multimedia core
-
 CONFIG += c++11 console
-
 CONFIG += c++11
 
 # You can make your code fail to compile if it uses deprecated APIs.

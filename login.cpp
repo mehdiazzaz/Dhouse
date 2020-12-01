@@ -20,7 +20,7 @@ void login::on_pushButton_connect_clicked()
 
         QString username = ui->lineEdit_username->text();
          QString password = ui->lineEdit_2->text();
-         if(username == "ridha" && password =="123" || username =="mehdi" && password=="azzaz")
+         if(username == "ilyes" && password =="22" || username =="mehdi" && password=="azzaz" || username == "yasmine" && password =="20" )
          {
              QMediaPlayer* player;
              player= new QMediaPlayer;

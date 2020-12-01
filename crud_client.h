@@ -29,6 +29,10 @@ public:
     QSqlQueryModel  *triernom();
     QSqlQueryModel  *trierage();
     QSqlQueryModel *afficher_nom(QString);
+    QSqlQueryModel *afficher_id(QString);
+    QSqlQueryModel *afficher_prenom(QString);
+    QSqlQueryModel *afficher_age(QString);
+
 
 };
 

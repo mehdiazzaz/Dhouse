@@ -52,6 +52,14 @@ private slots:
 
     void on_pushButton_rechercher_4_clicked();
 //
+    void on_radioButton_clicked();
+
+    void on_radioButton_2_clicked();
+
+    void on_radioButton_3_clicked();
+
+    void on_radioButton_4_clicked();
+
 private:
     Ui::gestion_client *ui;
      crud_client tempclient;

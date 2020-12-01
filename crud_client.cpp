@@ -105,5 +105,35 @@ QSqlQueryModel * crud_client::afficher_nom(QString prenom)
     model->setHeaderData(3,Qt::Horizontal,"age");
     return model ;
 }
+QSqlQueryModel * crud_client::afficher_prenom(QString prenom)
+{
+    QSqlQueryModel *model = new QSqlQueryModel();
+    model->setQuery("select * from CLIENTC WHERE prenom = '"+prenom+"'");
+    model->setHeaderData(0,Qt::Horizontal,"id");
+    model->setHeaderData(1,Qt::Horizontal,"prenom");
+    model->setHeaderData(2,Qt::Horizontal,"nom");
+    model->setHeaderData(3,Qt::Horizontal,"age");
+    return model ;
+}
+QSqlQueryModel * crud_client::afficher_id(QString prenom)
+{
+    QSqlQueryModel *model = new QSqlQueryModel();
+    model->setQuery("select * from CLIENTC WHERE nom = '"+prenom+"'");
+    model->setHeaderData(0,Qt::Horizontal,"id");
+    model->setHeaderData(1,Qt::Horizontal,"prenom");
+    model->setHeaderData(2,Qt::Horizontal,"nom");
+    model->setHeaderData(3,Qt::Horizontal,"age");
+    return model ;
+}
+QSqlQueryModel * crud_client::afficher_age(QString prenom)
+{
+    QSqlQueryModel *model = new QSqlQueryModel();
+    model->setQuery("select * from CLIENTC WHERE age = '"+prenom+"'");
+    model->setHeaderData(0,Qt::Horizontal,"id");
+    model->setHeaderData(1,Qt::Horizontal,"prenom");
+    model->setHeaderData(2,Qt::Horizontal,"nom");
+    model->setHeaderData(3,Qt::Horizontal,"age");
+    return model ;
+}
 
 //
