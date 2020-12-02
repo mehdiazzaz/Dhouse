@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Dialog</string>
+   <string>Login</string>
   </property>
   <widget class="QFrame" name="frame">
    <property name="geometry">
@@ -25,7 +25,8 @@
    <property name="styleSheet">
     <string notr="true">*{
 font-family:century gothic;
-font-size:24px;
+
+font-size:14px;
 
 }
 QFrame
@@ -47,23 +48,23 @@ background:transparent;
 #pushButton_connect
 {
 background:#3366cc;
-border-radius:60px;
+border-radius:20px;
 }
 #pushButton_connect:hover
 {
 color:#333;
-border-radius:60px;
+border-radius:20px;
 background:white;
 }
 #pushButton_2
 {
 background:#3366cc;
-border-radius:60px;
+border-radius:15px;
 }
 #pushButton_2:hover
 {
 color:#333;
-border-radius:60px;
+border-radius:15px;
 background:white;
 }
 
@@ -143,7 +144,7 @@ border-bottom :1px solid	#717072;
      <rect>
       <x>610</x>
       <y>400</y>
-      <width>111</width>
+      <width>101</width>
       <height>31</height>
      </rect>
     </property>
@@ -154,9 +155,9 @@ border-bottom :1px solid	#717072;
    <widget class="QPushButton" name="pushButton_connect">
     <property name="geometry">
      <rect>
-      <x>570</x>
+      <x>560</x>
       <y>330</y>
-      <width>181</width>
+      <width>201</width>
       <height>41</height>
      </rect>
     </property>

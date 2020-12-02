@@ -37,8 +37,9 @@ background-image:url(:/selem2.jpg);
 
 *{
 font-family:century gothic;
+
 background:#333;
-font-size:24px;
+font-size:14px;
 
 }
 QGroupBox
@@ -49,95 +50,95 @@ background-image:url(:/selem2.jpg);
 #pushButton_4
 {
 background:#3366cc;
-border-radius:60px;
+border-radius:15px;
 }
 #pushButton_4:hover
 {
 color:#333;
-border-radius:60px;
+border-radius:15px;
 background:white;
 }
 #pushButton_5
 {
 background:#3366cc;
-border-radius:60px;
+border-radius:15px;
 }
 #pushButton_5:hover
 {
 color:#333;
-border-radius:60px;
+border-radius:15px;
 background:white;
 }
 #pushButton_7
 {
 background:#3366cc;
-border-radius:60px;
+border-radius:15px;
 }
 #pushButton_7:hover
 {
 color:#333;
-border-radius:60px;
+border-radius:15px;
 background:white;
 }
 #pushButton_8
 {
 background:#3366cc;
-border-radius:60px;
+border-radius:15px;
 }
 #pushButton_8:hover
 {
 color:#333;
-border-radius:60px;
+border-radius:15px;
 background:white;
 }
 #pushButton_rechercher_4
 {
 background:#3366cc;
-border-radius:60px;
+border-radius:15px;
 }
 #pushButton_rechercher_4:hover
 {
 color:#333;
-border-radius:60px;
+border-radius:15px;
 background:white;
 }
 #pushButton_2
 {
 background:#3366cc;
-border-radius:60px;
+border-radius:15px;
 }
 #pushButton_2:hover
 {
 color:#333;
-border-radius:60px;
+border-radius:15px;
 background:white;
 }
 #pushButton_6
 {
 background:#3366cc;
-border-radius:60px;
+border-radius:15px;
 }
 #pushButton_6:hover
 {
 color:#333;
-border-radius:60px;
+border-radius:15px;
 background:white;
 }
 #pushButton_3
 {
 background:#3366cc;
-border-radius:60px;
+border-radius:15px;
 }
 #pushButton_3:hover
 {
 color:#333;
-border-radius:60px;
+border-radius:15px;
 background:white;
 }
 </string>
    </property>
    <property name="currentIndex">
-    <number>0</number>
+    <number>2</number>
    </property>
    <widget class="QWidget" name="tab">
     <attribute name="title">
@@ -198,7 +199,7 @@ background:white;
     <widget class="QLabel" name="label_4">
      <property name="geometry">
       <rect>
-       <x>20</x>
+       <x>10</x>
        <y>220</y>
        <width>131</width>
        <height>31</height>
@@ -253,7 +254,7 @@ background:white;
        <x>20</x>
        <y>60</y>
        <width>81</width>
-       <height>16</height>
+       <height>21</height>
       </rect>
      </property>
      <property name="text">
@@ -496,7 +497,7 @@ background:white;
       <rect>
        <x>20</x>
        <y>170</y>
-       <width>221</width>
+       <width>171</width>
        <height>31</height>
       </rect>
      </property>
@@ -533,8 +534,8 @@ background:white;
     <widget class="QPushButton" name="pushButton_2">
      <property name="geometry">
       <rect>
-       <x>164</x>
-       <y>262</y>
+       <x>130</x>
+       <y>260</y>
        <width>121</width>
        <height>31</height>
       </rect>
