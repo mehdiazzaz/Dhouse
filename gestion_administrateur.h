@@ -9,6 +9,7 @@
 #include <QStandardItemModel>
 #include "smtp.h"
 #include <QFileDialog>
+#include <QPropertyAnimation>
 
 namespace Ui {
 class gestion_administrateur;
@@ -63,7 +64,8 @@ private:
 
     int selected_Agent=0;
     int selected_Administrateur=0;
-    QStringList files;
+    QPropertyAnimation* animation;
+   QPropertyAnimation* animation2;
 };
 
 #endif // GESTION_ADMINISTRATEUR_H

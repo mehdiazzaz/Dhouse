@@ -18,7 +18,7 @@ public:
     int get_tel();
     bool ajouter();
     QSqlQueryModel * afficher();
-    bool supprimer(int);
+    bool supprimer(QString);
     bool chercher(QString);
     bool editer();
 

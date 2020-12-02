@@ -16,9 +16,14 @@ gestion_administrateur::gestion_administrateur(QWidget *parent) :
     ui->setupUi(this);
     afficher();
 
+    animation=new QPropertyAnimation(ui->label_3,"geometry");
+    animation->setDuration(30000);
+    animation->setStartValue(ui->label_22->geometry());
+     animation->setEndValue((QRect(400,150,500,120)));
+     animation->start();
 
-    connect(ui->sendBtn, SIGNAL(clicked()),this, SLOT(sendMail()));
-    connect(ui->browseBtn, SIGNAL(clicked()), this, SLOT(browse()));
+
+
 
 }
 
@@ -195,8 +200,8 @@ QMessageBox::information(nullptr, QObject::tr("editer un agent"),
 
 void gestion_administrateur::on_pushButton_suppagent_clicked()
 {
-    int tel =ui->lineEdit_nomsupp->text().toInt();;
-    bool test=Atmp.supprimer(tel);
+    QString nom =ui->lineEdit_nomsupp->text();
+    bool test=Atmp.supprimer(nom);
 
     if(test){
 

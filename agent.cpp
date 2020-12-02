@@ -56,11 +56,11 @@ QSqlQueryModel * Agent::afficher(){
     return model;
 
 }
-bool Agent::supprimer(int tel){
+bool Agent::supprimer(QString nom){
     QSqlQuery query;
-   QString res= QString::number(tel);
-    query.prepare("DELETE FROM agent WHERE tel=:tel");
-     query.bindValue(":tel",res);
+
+    query.prepare("DELETE FROM agent WHERE nom=:nom");
+     query.bindValue(":nom",nom);
 
      return query.exec();
 }
