@@ -1,5 +1,8 @@
 <RCC>
-    <qresource prefix="/img">
-        <file>schedule_appointment_event_plan_timetable_syllabus_future_tasks_time_table-512.png</file>
+    <qresource prefix="/">
+        <file>selem2.jpg</file>
+        <file>dhouse.png</file>
+        <file>client icon.jpg</file>
+        <file>icon promotion.jpg</file>
     </qresource>
 </RCC>

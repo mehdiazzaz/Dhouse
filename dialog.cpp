@@ -57,3 +57,5 @@ void Dialog::on_pushButton_envoyer_clicked()
             }
             smtp.quit();
 }
+
+

@@ -2,6 +2,7 @@
 #define GESTIONDERECLAMATION_H
 #include <QDialog>
 #include <crud_reclamation.h>
+#include <QMediaPlayer>
 
 namespace Ui {
 class gestiondereclamation;
@@ -28,15 +29,16 @@ private slots:
 
     void on_triertype_reclamation_clicked();
 
+    void on_pushButton_6_clicked();
+
     void on_pushButton_4_clicked();
 
     void on_pushButton_5_clicked();
 
-    void on_pushButton_6_clicked();
-
 private:
     Ui::gestiondereclamation *ui;
     crud_reclamation tempreclamation;
+    QMediaPlayer* player;
 };
 
 #endif // GESTIONDERECLAMATION_H

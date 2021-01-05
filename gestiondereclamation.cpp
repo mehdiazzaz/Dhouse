@@ -12,7 +12,7 @@ gestiondereclamation::gestiondereclamation(QWidget *parent) :
     ui(new Ui::gestiondereclamation)
 {
     ui->setupUi(this);
-    ui->tableView->setModel(tempreclamation.afficher());
+    ui->tableView_rec->setModel(tempreclamation.afficher());
 }
 
 gestiondereclamation::~gestiondereclamation()
@@ -20,27 +20,26 @@ gestiondereclamation::~gestiondereclamation()
     delete ui;
 }
 
+
 void gestiondereclamation::on_pushButton_clicked()
+{
+    int d=ui->lineEdit_id_reclamation_2->text().toInt();
+     QString o=ui->lineEdit_nom_reclamation->text();
+    QString y=ui->lineEdit_type_reclamation_2->text();
 
-    {
-        int d=ui->lineEdit_id_reclamation_2->text().toInt();
-         QString o=ui->lineEdit_nom_reclamation->text();
-        QString y=ui->lineEdit_type_reclamation_2->text();
-
-            crud_reclamation c(d,o,y);
-            bool test = c.ajouter();
-            if (test)
-            {
+        crud_reclamation c(d,o,y);
+        bool test = c.ajouter();
+        if (test)
+        {
 
 
-                QMessageBox::information(nullptr,"AJOUT RECLAMATION","RECLAMATION AJOUTEE");
-            }
-            else
-            {
-                QMessageBox::warning(nullptr,"AJOUT RECLAMATION","RECLAMATION NON AJOUTEE");
-            }
-    }
-
+            QMessageBox::information(nullptr,"AJOUT RECLAMATION","RECLAMATION AJOUTEE");
+        }
+        else
+        {
+            QMessageBox::warning(nullptr,"AJOUT RECLAMATION","RECLAMATION NON AJOUTEE");
+        }
+}
 
 void gestiondereclamation::on_pushButton_2_clicked()
 {
@@ -49,7 +48,7 @@ void gestiondereclamation::on_pushButton_2_clicked()
     if (test)
     {
 
-        ui->tableView->setModel(tempreclamation.afficher());
+        ui->tableView_rec->setModel(tempreclamation.afficher());
 
         QMessageBox::information(nullptr,"SUPPRIMER CLIENT","COMMANDE SUPPRIMEE !");
     }
@@ -61,23 +60,34 @@ void gestiondereclamation::on_pushButton_2_clicked()
 
 void gestiondereclamation::on_pushButton_3_clicked()
 {
+
     int d=ui->lineEdit_id_reclamation_modif->text().toInt();
     QString o=ui->lineEdit_nom_reclamation_modif->text();
     QString y=ui->lineEdit_type_reclamation_modif->text();
 
-        crud_reclamation c(d,o,y);
-        bool test = c.modifer();
-        if (test)
-        {
+    bool test = ui->lineEdit_id_reclamation_modif==NULL and ui->lineEdit_nom_reclamation_modif==NULL and ui->lineEdit_type_reclamation_modif==NULL ;
+    if (test)
+    {
+        QMessageBox::information(nullptr,"ATTENTION","veuillez remplir toutes les cases");
 
-            ui->tableView->setModel(tempreclamation.afficher());
+      }
+    else
+    {
+        bool test2 = tempreclamation.supprimer(d);
+    crud_reclamation c(d,o,y);
+    test2=c.ajouter();
+    if (test2)
+    {
+        QMessageBox::information(nullptr,"MODIFICATION REUSSIE","LA COMMANDE A ETE BIEN MODIFIEE");
+    ui->tableView_rec->setModel(tempreclamation.afficher());
 
-            QMessageBox::information(nullptr,"MODIFER RECLAMATION","RECAMATION MODIFEE");
-        }
-        else
-        {
-            QMessageBox::warning(nullptr,"MODIFER RECLAMATION","RECLAMATION NON MODIFEE");
-        }
+    }
+    else
+    {
+        QMessageBox::critical(nullptr,"ATTENTION","probléme de modification");
+
+    }
+}
 }
 
 void gestiondereclamation::on_trierid_reclamation_clicked()
@@ -85,9 +95,9 @@ void gestiondereclamation::on_trierid_reclamation_clicked()
     bool test = true;
       if (test)
           {
-          ui->tableView->setModel(tempreclamation.afficher());
+          ui->tableView_rec->setModel(tempreclamation.afficher());
 
-              ui->tableView->setModel(tempreclamation.trierid_reclamation());
+              ui->tableView_rec->setModel(tempreclamation.trierid_reclamation());
 
 
 
@@ -106,9 +116,9 @@ void gestiondereclamation::on_triernom_reclamation_clicked()
     bool test = true;
       if (test)
           {
-          ui->tableView->setModel(tempreclamation.afficher());
+          ui->tableView_rec->setModel(tempreclamation.afficher());
 
-              ui->tableView->setModel(tempreclamation.triernom_reclamation());
+              ui->tableView_rec->setModel(tempreclamation.triernom_reclamation());
 
 
           }
@@ -123,12 +133,13 @@ void gestiondereclamation::on_triernom_reclamation_clicked()
 
 void gestiondereclamation::on_triertype_reclamation_clicked()
 {
+
     bool test = true;
       if (test)
           {
-          ui->tableView->setModel(tempreclamation.afficher());
+          ui->tableView_rec->setModel(tempreclamation.afficher());
 
-              ui->tableView->setModel(tempreclamation.triertype_reclamation());
+              ui->tableView_rec->setModel(tempreclamation.triertype_reclamation());
 
 
           }
@@ -141,29 +152,25 @@ void gestiondereclamation::on_triertype_reclamation_clicked()
       }
 }
 
-
-
-void gestiondereclamation::on_pushButton_5_clicked()
-{
-    ui->tableView->setModel(tempreclamation.afficher());
-        QString nom = ui->lineEdit_recherche1->text();
-       ui->tableView_recherche1->setModel(tempreclamation.afficher_reclamation(nom));
-}
-
-
-
 void gestiondereclamation::on_pushButton_6_clicked()
 {
     QPrinter printer;
         printer.setPrinterName("diserter printer name");
         QPrintDialog dialog(&printer,this);
         if(dialog.exec()==QDialog::Rejected)return;
-        ui->tableView->render(&printer);
-
+        ui->tableView_rec->render(&printer);
 }
 
 void gestiondereclamation::on_pushButton_4_clicked()
 {
     Dialog d;
     d.exec();
+}
+
+
+void gestiondereclamation::on_pushButton_5_clicked()
+{
+    ui->tableView_rec->setModel(tempreclamation.afficher());
+        QString nom = ui->lineEdit_recherche1->text();
+       ui->tableView_recherche1->setModel(tempreclamation.afficher_reclamation(nom));
 }

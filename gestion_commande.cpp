@@ -5,13 +5,11 @@
 #include <QPrinter>
 #include <QPrintDialog>
 #include <QtPrintSupport>
-
 gestion_commande::gestion_commande(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::gestion_commande)
 {
     ui->setupUi(this);
-    ui->tableView->setModel(tempcommandes.afficher());
 }
 
 gestion_commande::~gestion_commande()
@@ -30,7 +28,6 @@ void gestion_commande::on_pushButton_clicked()
         if (test)
         {
 
-
             QMessageBox::information(nullptr,"AJOUT CLIENT","COMMANDE AJOUTEE");
         }
         else
@@ -41,51 +38,58 @@ void gestion_commande::on_pushButton_clicked()
 
 void gestion_commande::on_pushButton_2_clicked()
 {
+    int id = ui->lineEdit_id_supprimer->text().toInt();
+    bool test = tempcommandes.supprimer(id);
+    if (test)
+    {
 
-        int id = ui->lineEdit_id_supprimer->text().toInt();
-        bool test = tempcommandes.supprimer(id);
-        if (test)
-        {
+        ui->tableView->setModel(tempcommandes.afficher());
 
-            ui->tableView->setModel(tempcommandes.afficher());
-
-            QMessageBox::information(nullptr,"SUPPRIMER COMMANDE","COMMANDE SUPPRIMEE !");
-        }
-        else
-        {
-            QMessageBox::warning(nullptr,"SUPPRIMER COMMANDE","COMMANDE NON SUPPRIMEE !");
-        }
+        QMessageBox::information(nullptr,"SUPPRIMER COMMANDE","COMMANDE SUPPRIMEE !");
     }
-
-
+    else
+    {
+        QMessageBox::warning(nullptr,"SUPPRIMER COMMANDE","COMMANDE NON SUPPRIMEE !");
+    }
+}
 
 void gestion_commande::on_pushButton_modifier_clicked()
 {
     int i=ui->lineEdit_id_produit_modifier->text().toInt();
     QString t=ui->lineEdit_nom_produit_modifier->text();
-    QString n=ui->lineEdit_type_produit_modifier->text();
+  QString n=ui->lineEdit_type_produit_modifier->text();
+bool test = ui->lineEdit_id_produit_modifier==NULL and ui->lineEdit_nom_produit_modifier==NULL and ui->lineEdit_type_produit_modifier==NULL ;
+if (test)
+{
+    QMessageBox::information(nullptr,"ATTENTION","veuillez remplir toutes les cases");
 
-        crud_commandes c(i,n,t);
-        bool test = c.modifer();
-        if (test)
-        {
-            //player->setMedia(QUrl::fromLocalFile("C:/Users/Mehdi AZZAZ/Documents/projt_Dhouse/client modifier.mp3"));
-                        //player->play();
-                       // qDebug()<<player->errorString();
-                        //QThread::sleep(1);
-            ui->tableView->setModel(tempcommandes.afficher());
+  }
+else
+{
+    bool test2 = tempcommandes.supprimer(i);
+crud_commandes c(i,n,t);
+test2=c.ajouter();
+if (test2)
+{
 
-            QMessageBox::information(nullptr,"MODIFER CLIENT","CLIENT MODIFE");
-        }
-        else
-        {
-            QMessageBox::warning(nullptr,"MODIFER CLIENT","CLIENT NON MODIFE");
-        }
+    ui->tableView->setModel(tempcommandes.afficher());
+
+    QMessageBox::information(nullptr,"MODIFICATION REUSSIE","LA COMMANDE A ETE BIEN MODIFIEE");
+ui->tableView->setModel(tempcommandes.afficher());
+
+}
+else
+{
+    QMessageBox::critical(nullptr,"ATTENTION","probléme de modification");
+
+}
+}
+
 }
 
 void gestion_commande::on_checkBox_clicked()
 {
-    bool test = true;
+        bool test = true;
       if (test)
           {
           ui->tableView->setModel(tempcommandes.afficher());
@@ -125,8 +129,10 @@ void gestion_commande::on_checkBox_2_clicked()
 }
 
 void gestion_commande::on_checkBox_3_clicked()
-{
-    bool test = true;
+
+   {
+
+        bool test = true;
       if (test)
           {
           ui->tableView->setModel(tempcommandes.afficher());
@@ -142,22 +148,25 @@ void gestion_commande::on_checkBox_3_clicked()
                                 QObject::tr("Erreur !.\n"
                                             "Click Cancel to exit."), QMessageBox::Cancel);
       }
+
+
 }
-
-void gestion_commande::on_pushButton_4_clicked()
-{
-    ui->tableView->setModel(tempcommandes.afficher());
-        QString nom = ui->lineEdit_recherche->text();
-       ui->tableView_recherche->setModel(tempcommandes.afficher_commande(nom));
-}
-
-
 void gestion_commande::on_pushButton_5_clicked()
 {
+
     QPrinter printer;
         printer.setPrinterName("diserter printer name");
         QPrintDialog dialog(&printer,this);
         if(dialog.exec()==QDialog::Rejected)return;
         ui->tableView->render(&printer);
 
+}
+
+
+void gestion_commande::on_pushButton_4_clicked()
+{
+
+    ui->tableView->setModel(tempcommandes.afficher());
+        QString nom = ui->lineEdit_recherche->text();
+       ui->tableView_recherche->setModel(tempcommandes.afficher_commande(nom));
 }

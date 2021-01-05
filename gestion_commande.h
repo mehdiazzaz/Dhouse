@@ -3,6 +3,7 @@
 #include "crud_commandes.h"
 
 #include <QDialog>
+#include <QMediaPlayer>
 
 namespace Ui {
 class gestion_commande;
@@ -23,7 +24,9 @@ private slots:
 
     void on_pushButton_modifier_clicked();
 
-    void on_pushButton_3_clicked();
+    void on_pushButton_5_clicked();
+
+    void on_pushButton_4_clicked();
 
     void on_checkBox_clicked();
 
@@ -31,13 +34,10 @@ private slots:
 
     void on_checkBox_3_clicked();
 
-    void on_pushButton_4_clicked();
-
-    void on_pushButton_5_clicked();
-
 private:
     Ui::gestion_commande *ui;
      crud_commandes tempcommandes;
+     QMediaPlayer* player;
 };
 
 #endif // GESTION_COMMANDE_H
